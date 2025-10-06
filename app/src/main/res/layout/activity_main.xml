@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device Controls"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manage your device features"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- BLUETOOTH SECTION -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="📱"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/icon_background_blue"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bluetooth"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnBluetoothToggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Toggle Connection"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:backgroundTint="#1976D2"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btnScanDevices"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Scan for Devices"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:backgroundTint="#42A5F5"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Available Devices"
+                    android:textSize="13sp"
+                    android:textColor="#757575"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <ListView
+                    android:id="@+id/listViewDevices"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:background="#F8F9FA"
+                    android:divider="#E0E0E0"
+                    android:dividerHeight="1dp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/editTextBluetoothSend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type message to send"
+                    android:padding="14dp"
+                    android:background="@drawable/edit_text_background"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <Button
+                        android:id="@+id/btnSendData"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="Send"
+                        android:textAllCaps="false"
+                        android:textSize="15sp"
+                        android:backgroundTint="#43A047"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/btnReceiveData"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="Receive"
+                        android:textAllCaps="false"
+                        android:textSize="15sp"
+                        android:backgroundTint="#FB8C00"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <Button
+                        android:id="@+id/btnSendImage"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="Send Image"
+                        android:textAllCaps="false"
+                        android:textSize="15sp"
+                        android:backgroundTint="#5E35B1"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/btnSendFile"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="Send File"
+                        android:textAllCaps="false"
+                        android:textSize="15sp"
+                        android:backgroundTint="#6D4C41"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/textViewBluetoothReceived"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No data received yet"
+                    android:padding="14dp"
+                    android:background="#E3F2FD"
+                    android:textColor="#1565C0"
+                    android:textSize="14sp"
+                    android:minHeight="60dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btnDisconnectBluetooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Disconnect Device"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:backgroundTint="#E53935"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- FLASHLIGHT SECTION -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="🔦"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/icon_background_yellow"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flashlight"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"/>
+                </LinearLayout>
+
+                <ToggleButton
+                    android:id="@+id/toggleFlashlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:textOn="Flashlight is ON"
+                    android:textOff="Flashlight is OFF"
+                    android:textAllCaps="false"
+                    android:background="@drawable/toogle_button_background"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- AUDIO RECORDER SECTION -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="🎤"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/icon_background_red"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Audio Recorder"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <Button
+                        android:id="@+id/btnRecordAudio"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="Start"
+                        android:textAllCaps="false"
+                        android:textSize="15sp"
+                        android:backgroundTint="#E53935"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/btnStopRecording"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="Stop"
+                        android:textAllCaps="false"
+                        android:textSize="15sp"
+                        android:backgroundTint="#757575"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewRecordingStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ready to record"
+                    android:padding="14dp"
+                    android:background="#FFEBEE"
+                    android:textColor="#C62828"
+                    android:textSize="14sp"
+                    android:minHeight="60dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- TEXT TO SPEECH SECTION -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="🔊"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/icon_background_purple"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Text to Speech"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editTextTTS"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:hint="Type text to convert to speech"
+                    android:gravity="top|start"
+                    android:padding="14dp"
+                    android:background="@drawable/edit_text_background"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btnSpeak"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Speak Text"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:backgroundTint="#8E24AA"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SPEECH TO TEXT SECTION -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="🎙️"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/icon_background_teal"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Speech to Text"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnStartSTT"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Start Listening"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:backgroundTint="#00897B"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/textViewSTTResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tap 'Start Listening' to begin"
+                    android:padding="14dp"
+                    android:background="#E0F2F1"
+                    android:textColor="#00695C"
+                    android:textSize="14sp"
+                    android:minHeight="80dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
